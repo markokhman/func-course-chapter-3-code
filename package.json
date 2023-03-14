@@ -10,7 +10,11 @@
     "@ton-community/test-utils": "^0.0.2",
     "@types/jest": "^29.4.0",
     "@types/node": "^18.15.0",
+    "@types/qrcode-terminal": "^0.12.0",
+    "@types/qs": "^6.9.7",
     "jest": "^29.5.0",
+    "qrcode-terminal": "^0.12.0",
+    "qs": "^6.11.1",
     "ton": "^13.4.1",
     "ton-core": "^0.48.0",
     "ton-crypto": "^3.2.0",
@@ -20,6 +24,14 @@
   },
   "scripts": {
     "compile": "ts-node ./scripts/compile.ts",
-    "test": "yarn compile && yarn jest"
+    "test": "yarn compile && yarn jest",
+    "deploy": "TESTNET=true ts-node ./scripts/deploy.ts",
+    "deploy_mainnet": "ts-node ./scripts/deploy.ts",
+    "postdeploy": "TESTNET=true ts-node ./scripts/postdeploy.ts",
+    "postdeploy_mainnet": "ts-node ./scripts/postdeploy.ts"
+  },
+  "dependencies": {
+    "@orbs-network/ton-access": "^2.3.0",
+    "dotenv": "^16.0.3"
   }
 }
