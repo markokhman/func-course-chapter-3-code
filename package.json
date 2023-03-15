@@ -20,18 +20,16 @@
     "ton-crypto": "^3.2.0",
     "ts-jest": "^29.0.5",
     "ts-node": "^10.9.1",
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "@orbs-network/ton-access": "^2.3.0",
+    "dotenv": "^16.0.3"
   },
   "scripts": {
     "compile": "ts-node ./scripts/compile.ts",
     "test": "yarn compile && yarn jest",
     "deploy": "TESTNET=true ts-node ./scripts/deploy.ts",
-    "deploy_mainnet": "ts-node ./scripts/deploy.ts",
-    "postdeploy": "TESTNET=true ts-node ./scripts/postdeploy.ts",
-    "postdeploy_mainnet": "ts-node ./scripts/postdeploy.ts"
-  },
-  "dependencies": {
-    "@orbs-network/ton-access": "^2.3.0",
-    "dotenv": "^16.0.3"
+    "deploy:mainnet": "ts-node ./scripts/deploy.ts",
+    "onchaintest": "TESTNET=true ts-node ./scripts/onchaintest.ts",
+    "onchaintest:mainnet": "ts-node ./scripts/onchaintest.ts"
   }
 }

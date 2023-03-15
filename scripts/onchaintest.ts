@@ -5,7 +5,7 @@ import { TonClient4 } from "ton";
 import qs from "qs";
 import qrcode from "qrcode-terminal";
 
-async function postDeployScript() {
+async function onchainTestScript() {
   const codeCell = Cell.fromBoc(Buffer.from(hex, "hex"))[0];
   const dataCell = new Cell();
 
@@ -76,4 +76,4 @@ async function postDeployScript() {
   }, 2000);
 }
 
-postDeployScript();
+onchainTestScript();
